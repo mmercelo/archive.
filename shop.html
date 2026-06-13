@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="favicon.png">
+<title>Shop — ARCHIVE.</title>
+<meta name="description" content="Shop all ARCHIVE. products.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #C9C7C2;
+    --ink: #111111;
+    --grey: #8C8C8C;
+    --light-grey: #B5B3AE;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 32px;
+    border-bottom: 1px solid var(--light-grey);
+  }
+  .logo {
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 0.35em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+  .nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .nav-links a:hover { opacity: 0.5; }
+  .nav-links a:focus-visible { outline: 1px solid var(--ink); outline-offset: 4px; }
+
+  .page-head {
+    padding: 70px 32px 50px;
+    text-align: center;
+  }
+  .page-head .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-bottom: 12px;
+  }
+  .page-head h1 {
+    font-weight: 600;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    letter-spacing: 0.04em;
+  }
+
+  .products {
+    padding: 0 32px 100px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 28px;
+  }
+  .size-picker {
+    display: none;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .size-picker.active { display: flex; }
+  .size-btn {
+    flex: 1;
+    text-align: center;
+    border: 1px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+    padding: 8px 0;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  .size-btn.selected, .size-btn:hover {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .size-btn:focus-visible { outline: 2px solid var(--grey); outline-offset: 2px; }
+  .product-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: var(--light-grey);
+    margin-bottom: 18px;
+    overflow: hidden;
+  }
+  .product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .product h3 {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  .product .price {
+    color: var(--grey);
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+  }
+  .buy-btn {
+    display: block;
+    text-align: center;
+    background: var(--grey);
+    color: var(--bg);
+    padding: 13px;
+    text-decoration: none;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+  .buy-btn:hover { background: var(--ink); }
+  .buy-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+  /* FOOTER */
+  footer {
+    padding: 48px 32px;
+    border-top: 1px solid var(--light-grey);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 0.8rem;
+  }
+  .footer-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.75rem;
+  }
+  .footer-links a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .footer-links a:hover { opacity: 0.5; }
+  .footer-links a:focus-visible { outline: 1px solid var(--ink); outline-offset: 3px; }
+  .footer-mono {
+    color: var(--grey);
+    font-size: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    nav { flex-direction: column; gap: 16px; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">ARCHIVE.</a>
+  <ul class="nav-links">
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="page-head">
+  <div class="container">
+    <div class="eyebrow">All Products</div>
+    <h1>Shop</h1>
+  </div>
+</section>
+
+<section class="products">
+  <div class="container">
+    <div class="grid">
+      <div class="product">
+        <div class="product-img"><img src="images/product6.jpg" alt="WHITE ARCHIVe."></div>
+        <h3>WHITE ARCHIV<span style="font-size:0.6em;">e</span>. T-Shirt</h3>
+        <p class="price">£40</p>
+        <a href="product-white.html" target="_blank" class="buy-btn">Buy now</a>
+      </div>
+      <div class="product">
+        <div class="product-img"><img src="images/product7.jpg" alt="BLACK ARCHIVe."></div>
+        <h3>BLACK ARCHIV<span style="font-size:0.6em;">e</span>. T-Shirt</h3>
+        <p class="price">£40</p>
+        <a href="product-black.html" target="_blank" class="buy-btn">Buy now</a>
+      </div>
+      <div class="product">
+        <div class="product-img"><img src="images/product4.jpg" alt="Product 4"></div>
+        <h3>Product Name</h3>
+        <p class="price">£00</p>
+        <a href="product4.html" target="_blank" class="buy-btn">Buy now</a>
+      </div>
+      <div class="product">
+        <div class="product-img"><img src="images/product5.jpg" alt="Product 5"></div>
+        <h3>Product Name</h3>
+        <p class="price">£00</p>
+        <a href="product5.html" target="_blank" class="buy-btn">Buy now</a>
+      </div>
+      <div class="product">
+        <div class="product-img"><img src="images/product8.jpg" alt="Product 8"></div>
+        <h3>Product Name</h3>
+        <p class="price">£00</p>
+        <a href="product8.html" target="_blank" class="buy-btn">Buy now</a>
+      </div>
+      <div class="product">
+        <div class="product-img"><img src="images/product9.jpg" alt="Product 9"></div>
+        <h3>Product Name</h3>
+        <p class="price">£00</p>
+        <a href="product9.html" target="_blank" class="buy-btn">Buy now</a>
+      </div>
+      <div class="product">
+        <div class="product-img"><img src="images/product10.jpg" alt="WHITE ARCHIVe. Pants"></div>
+        <h3>WHITE ARCHIV<span style="font-size:0.6em;">e</span>. Pants</h3>
+        <p class="price">£65</p>
+        <a href="product-white-pants.html" target="_blank" class="buy-btn">Buy now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-mono">&copy; 1974 ARCHIVE.</div>
+  <ul class="footer-links">
+    <li><a href="mailto:namedfame99@gmail.com">Support: namedfame99@gmail.com</a></li>
+    <li><a href="#">Instagram</a></li>
+    <li><a href="#">TikTok</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

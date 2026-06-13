@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="favicon.png">
+<title>BLACK ARCHIVe. T-Shirt — ARCHIVE.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #C9C7C2;
+    --ink: #111111;
+    --grey: #8C8C8C;
+    --light-grey: #B5B3AE;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 32px;
+    border-bottom: 1px solid var(--light-grey);
+  }
+  .logo {
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 0.35em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+  .nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .nav-links a:hover { opacity: 0.5; }
+  .nav-links a:focus-visible { outline: 1px solid var(--ink); outline-offset: 4px; }
+
+  .product-page {
+    padding: 60px 32px 100px;
+  }
+  .product-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .product-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: var(--light-grey);
+    overflow: hidden;
+  }
+  .product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .product-info h1 {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  .product-info .price {
+    color: var(--grey);
+    font-size: 1.2rem;
+    margin-bottom: 32px;
+  }
+  .size-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--grey);
+    margin-bottom: 12px;
+  }
+  .size-picker {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+  .size-btn {
+    flex: 1;
+    text-align: center;
+    border: 1px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+    padding: 14px 0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  .size-btn.selected, .size-btn:hover {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .size-btn:focus-visible { outline: 2px solid var(--grey); outline-offset: 2px; }
+
+  .buy-btn {
+    display: block;
+    text-align: center;
+    background: var(--grey);
+    color: var(--bg);
+    padding: 16px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+  .buy-btn:hover { background: var(--ink); }
+  .buy-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  .size-note {
+    font-size: 0.8rem;
+    color: var(--grey);
+    margin-top: 12px;
+    min-height: 18px;
+  }
+
+  footer {
+    padding: 48px 32px;
+    border-top: 1px solid var(--light-grey);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 0.8rem;
+  }
+  .footer-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.75rem;
+  }
+  .footer-links a { color: var(--ink); text-decoration: none; }
+  .footer-links a:hover { opacity: 0.5; }
+  .footer-mono { color: var(--grey); font-size: 0.75rem; }
+
+  @media (max-width: 768px) {
+    nav { flex-direction: column; gap: 16px; }
+    .product-layout { grid-template-columns: 1fr; gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">ARCHIVE.</a>
+  <ul class="nav-links">
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="product-page">
+  <div class="container">
+    <div class="product-layout">
+      <div class="product-img"><img src="images/product7.jpg" alt="BLACK ARCHIVe."></div>
+      <div class="product-info">
+        <h1>BLACK ARCHIV<span style="font-size:0.6em;">e</span>. T-Shirt</h1>
+        <p class="price">£40</p>
+
+        <div class="size-label">Size</div>
+        <div class="size-picker">
+          <button class="size-btn" onclick="selectSize(this,'S')">S</button>
+          <button class="size-btn" onclick="selectSize(this,'M')">M</button>
+          <button class="size-btn" onclick="selectSize(this,'L')">L</button>
+        </div>
+
+        <a href="https://buy.stripe.com/REPLACE_LINK_7" target="_blank" class="buy-btn" id="buy-link">Buy now</a>
+        <p class="size-note" id="size-note"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-mono">&copy; 1974 ARCHIVE.</div>
+  <ul class="footer-links">
+    <li><a href="mailto:namedfame99@gmail.com">Support: namedfame99@gmail.com</a></li>
+    <li><a href="#">Instagram</a></li>
+    <li><a href="#">TikTok</a></li>
+  </ul>
+</footer>
+
+<script>
+function selectSize(btn, size) {
+  document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  document.getElementById('size-note').textContent = 'Size ' + size + ' selected';
+}
+</script>
+
+</body>
+</html>
